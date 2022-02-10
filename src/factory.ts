@@ -44,6 +44,7 @@ import {ChangelogNotes, ChangelogSection} from './changelog-notes';
 import {GitHubChangelogNotes} from './changelog-notes/github';
 import {DefaultChangelogNotes} from './changelog-notes/default';
 import {BaseStrategyOptions} from './strategies/base';
+import {Dotnet} from './strategies/dotnet';
 
 // Factory shared by GitHub Action and CLI for creating Release PRs
 // and GitHub Releases:
@@ -51,6 +52,7 @@ import {BaseStrategyOptions} from './strategies/base';
 // object below.
 const allReleaseTypes = [
   'dart',
+  'dotnet',
   'elixir',
   'go',
   'go-yoshi',
@@ -75,6 +77,7 @@ export type ReleaseType = typeof allReleaseTypes[number];
 type ReleaseBuilder = (options: BaseStrategyOptions) => Strategy;
 type Releasers = Record<string, ReleaseBuilder>;
 const releasers: Releasers = {
+  dotnet: options => new Dotnet(options),
   go: options => new Go(options),
   'go-yoshi': options => new GoYoshi(options),
   'java-yoshi': options => new JavaYoshi(options),
