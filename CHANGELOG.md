@@ -4,6 +4,14 @@
 
 [1]: https://www.npmjs.com/package/release-please?activeTab=versions
 
+### [13.4.12](https://github.com/googleapis/release-please/compare/v13.4.11...v13.4.12) (2022-02-21)
+
+
+### Bug Fixes
+
+* catch FileNotFound error when building changeset ([#1306](https://github.com/googleapis/release-please/issues/1306)) ([3944b17](https://github.com/googleapis/release-please/commit/3944b17f33500cecc63a1ff63db81cdbd50ce1a1))
+* manifest config should allow overriding labels ([#1303](https://github.com/googleapis/release-please/issues/1303)) ([f4d0314](https://github.com/googleapis/release-please/commit/f4d0314d1a394389a233ba9e1383852f0875dcd1)), closes [#1302](https://github.com/googleapis/release-please/issues/1302)
+
 ### [13.4.11](https://github.com/googleapis/release-please/compare/v13.4.10...v13.4.11) (2022-02-18)
 
 
