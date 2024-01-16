@@ -137,6 +137,15 @@ commit message instead of the merged commit message.
 release-please does not know which commit(s) to apply the override to. [We
 recommend using squash-merge instead](#linear-git-commit-history-use-squash-merge).
 
+## How does Release Please know which Kokoro job to run
+
+Release Please does not have configuration about (Google-internal) Kokoro jobs.
+It's Releasetool that determine which Kokoro job to trigger upon merging a
+Release Please pull request.
+For example, its [java.py](https://github.com/googleapis/releasetool/blob/master/releasetool/commands/tag/java.py)
+has the logic to determine the Kokoro jobs for the Cloud Java client library
+repositories.
+
 ## Release Please bot does not create a release PR. Why?
 
 ### Step 1: Ensure releasable units are merged
